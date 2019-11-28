@@ -1,0 +1,16 @@
+0 - tienes que tener descargado el git (en clase esta presente)
+
+1 - git clone https://github.com/VladVolM/HTML5 (para clonar la carpeta,)
+
+
+
+(tienes que estar en la carpeta, "cd HTML5/" )
+2 - git status (demuestra lo que se ha añadido o borrado)
+3 - git add . (añade todo para guardar como vercion de commit)
+4 - git commit (guarda lo designado como un grupo, se indica que trabajo se hizo)
+5 - git push (indica usuario y contsaseña para enviar al GitHub)
+6 - Reiniciar pagina web para ver que el cambio se realizo
+
+
+
+7 - git pull (trae todo lo que no esta presente en tu trabajo, que esta en GitHub)
