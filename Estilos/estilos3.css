@@ -1,0 +1,17 @@
+table{background-color:red;width:100%;text-align:center;padding:5px;}
+td{width:16%;}
+a:link{color:00c7ff}
+a:visited{color:00495e}
+a:hover{color:red}
+#menu{background-color:white;width:100%;position:fixed; border:solid 2px;top:0px;right:0px;z-index:1;}
+#dos{margin-top:110px;position:relative;}
+#tres{background-color:white;width:100%;position:fixed;bottom:0px;right:0px;text-align:center;}
+#cuatro{background-color:white;width:13%;height:22.5%;position:absolute;top:0px;left:0px;border:solid 1px;z-index:0;}
+#cinco{overflow:scroll;background-color:white;width:13%;height:14.3%;position:absolute;top:0px;right:0px;border:solid 1px;z-index:0;}
+.seis{margin-left:14%;margin-right:14%;}
+#ocho{background-image:url(../Imagenes/Pineapple.jpeg); background-size:100%;background-color:white;width:13%;height:7.5%;position:absolute;top:15%;right:0px;border:solid 1px;z-index:0;}
+h1{text-align:center;font-size:60px;margin-top: -5px; margin-bottom: -5px;}
+h2{background-color:orange;margin: 20px;}
+h3{font-size:30px;font-family:Arial, Times New Roman ;margin-left:10%;padding-top:30px;}
+p{font-size:22px;margin-top: 10px;margin-bottom:5px;margin-left:8px;padding-bottom:10px;}
+img{float:left; margin-right:3px;margin-bottom:3px;}
