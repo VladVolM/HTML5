@@ -3,5 +3,6 @@ a:visited{color:00495e}
 a:hover{color:red}
 a:active{color:ffd632}
 h3{font-size:30px;font-family:Arial, Times New Roman }
-p{font-size:22px}
-body{color:white; background-color:black}
+p{font-size:22px;margin-left: 10px}
+body{color:white; background-color:black;margin-left: 20px;}
+header {text-align:center;}
