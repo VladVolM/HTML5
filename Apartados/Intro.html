@@ -1,37 +1,46 @@
+<!DOCTYPE html>
 <html lang="es">
 
 	<head>
 		<meta charset="UTF-8">
-		<title>Introducción e instalación de Docker</title>
+		<title>Introducción a Docker</title>
 
-		<link rel="stylesheet" href="../Estilos/estilos1.css"></link>
+		<link rel="stylesheet" href="../Estilos/Intro.css">
 
 	</head>
 
-	<body text="white" bgcolor="black">
+	<body>
+		<header>
+			Introducción a Docker
+		</header>
+		<section>
+			<h3>¿Qué es el Docker?</h3>
 
-		<a href="Clase1.html" target="1">Siguiente</a>
+			<p>Es un software que realiza una recolección, a nivel del sistema operativo.<br>Nos permite crear sistemas operativos, dentro de otros que estamos usando (linux, ubuntu, etc.).</p>
+		</section>
+		<section>
+			<h3>Ventajas</h3>
 
-		<h3>¿Qué es el Docker?</h3>
+			<p>-Docker aísla el sistema operativo interno, a nivel del Kernel, permitiendo el uso de estos sistemas operativos en nuestras máquinas.<br>-Se comparte con el Kernel y las librerías, todo lo requerido ya está presente para el funcionamiento del Docker, consume menos recursos del sistema que otros programas, permitiendo crear gran número de máquinas virtuales, sin causar problemas de consumo.</p>
+		</section>
+		<section>
+			<h3>Desventajas</h3>
 
-		<p>Es un software que realiza una recolección, a nivel del sistema operativo.<br>Nos permite crear sistemas operativos, dentro de otros que estamos usando (linux, ubuntu, etc.).</p>
+			<p>-Hay incompatibilidad con otros sistemas que no tengan el Kernel, para su funcionamiento en otros sistemas es necesario tener Kernel y arreglar la conexión al Docker<br>-Los sistemas operativos virtuales que se crean son Linux.</p>
+		</section>
+		<section>
+			<h3>Recursos</h3>
 
-		<h3>Ventajas</h3>
+			<p>Utiliza recursos a nivel de kernel y dos herramientas de aislamiento general(cgroup y namespaces)<br>Quiere decir que los ficheros de la máquina virtual pueden ser accedidos desde el host físico, pero la máquina virtual no puede acceder a nada fuera de ella.<br>Permiten aislar el cpu y memoria que se va a usar, personalizandolo hasta ciertos límites</p>
+		</section>
+		<section>
+			<h3>Utilidad</h3>
 
-		<p>-Docker aísla el sistema operativo interno, a nivel del Kernel, permitiendo el uso de estos sistemas operativos en nuestras máquinas.<br>-Se comparte con el Kernel y las librerías, todo lo requerido ya está presente para el funcionamiento del Docker, consume menos recursos del sistema que otros programas, permitiendo crear gran número de máquinas virtuales, sin causar problemas de consumo.</p>
-
-		<h3>Desventajas</h3>
-
-		<p>-Hay incompatibilidad con otros sistemas que no tengan el Kernel, para su funcionamiento en otros sistemas es necesario tener Kernel y arreglar la conexión al Docker<br>-Los sistemas operativos virtuales que se crean son Linux.</p>
-
-		<h3>Recursos</h3>
-
-		<p>Utiliza recursos a nivel de kernel y dos herramientas de aislamiento general(cgroup y namespaces)<br>Quiere decir que los ficheros de la máquina virtual pueden ser accedidos desde el host físico, pero la máquina virtual no puede acceder a nada fuera de ella.<br>Permiten aislar el cpu y memoria que se va a usar, personalizandolo hasta ciertos límites</p>
-
-		<h3>Utilidad</h3>
-
-		<p>Docker consigue ser flexible y bastante portable, permitiendo migrar estos sistemas operativos de una máquina a otra, copiar, extender etc.<br>Se puede crear un registro en cloud de un Docker que permitirá usarlo desde cualquier lugar con acceso al internet.<br>Esta enfocado a sistemas distribuidos, creando copias de entorno TI</p>
-
+			<p>Docker consigue ser flexible y bastante portable, permitiendo migrar estos sistemas operativos de una máquina a otra, copiar, extender etc.<br>Se puede crear un registro en cloud de un Docker que permitirá usarlo desde cualquier lugar con acceso al internet.<br>Esta enfocado a sistemas distribuidos, creando copias de entorno TI</p>
+		</section>
+		<footer>
+			<a href="Clase1.html" target="1">Siguiente</a>
+		</footer>
 	</body>
 
 </html>
