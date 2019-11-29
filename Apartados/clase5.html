@@ -1,45 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
 		<meta charset="UTF-8">
 		<title>Almacenamiento Docker</title>
 		<link rel="stylesheet" href="clase5.css">
+		<link rel="icon" type="image/png" href="./imagenes/icono.png">
 	</head>
 	<body>
 		<header>
-			<link rel="icon" type="image/png" href="./imagenes/icono.png">
 				<h1>
 					Almacenamiento Docker
 				</h1>
 		</header>
-			<section>
-				<h3>Tipos de almacenamiento</h3>
-				<p>
-					El almacenamiento de docker se puede realizar de dos formas:
-					<ul>
-						<li>
-							Volumen de datos:
-							<p>
+		<section>
+			<h3>Tipos de almacenamiento</h3>
+			<p>
+				El almacenamiento de docker se puede realizar de dos formas:</p>
+				<ul>
+					<li>
+						Volumen de datos:
+						<p>
 								Es un directorio especial que crea docker, puede estar dentro de uno o varios contenedores lo que permite que tengamos los datos
 de forma persistente y posiblemente compartidos. Si podemos compartir con varios contenedores, pues ese volumen de datos
 tendrá esos datos de forma persistente y por tanto podemos utilizar esa misma información en varios contenedores.
-							</p>
-						</li>
-						<li>
+						</p>
+					</li>
+					<li>
 							Contenedor de volumen de datos:
-							<p>
-								Normalmente cuando iniciamos un contenedor con un volumen asociado, ese volumen se inicializa cuando el contenedor se crea,
+						<p>
+							Normalmente cuando iniciamos un contenedor con un volumen asociado, ese volumen se inicializa cuando el contenedor se crea,
 lo que hace el contenedor es si la imagen va a ser el punto de montaje donde hemos puesto el volumen contiene información, esa información la copia en
 al volumen de datos. Cuando se genera el contenedor el volumen de datos ya contiene información persistente inicial que es la que le ofrece la imagen<br>
 								Cuando actualizamos imagenes y los contenedores de estas imagenes, los volumenes de datos no sufren ningun cambio, una vez que ha sido creado el volumen
 de la anterior imagen, tiene información, y esta recae sobre el punto de montaje del volumen como ya esta inicializado, no se perdería la información de esa imagen sino que se crearia otro volumen de datos con información de la nueva imagen.
 <br>Cuando se elimina el contenedor de volumen de datos no se elimina el volumen, sino que este se guarda de forma permanente y podemos utilizarlo con otro contenedor
 para acceder a la información de dicho volumen
-							</p>
-						</li>
-					</ul>
-				</p>
-			</section>
+						</p>
+					</li>
+				</ul>
+		</section>
 		<section>
 		<h3>Diferencias de almacenamiento</h3>
 		<p>
@@ -54,19 +53,19 @@ realizar diversas funciones con el contenedor como subir, bajar o migrar contene
 		<section>
 		<h3>Gestion de Volumen de Datos</h3>
 		<p>
-			Para crear un volumen de datos con docker utilizamos el comando<br>
+			Para crear un volumen de datos con docker utilizamos el comando<br></p>
 			<ul>
 				<li>
 					docker volume create
 				</li>
 			</ul>
-			Para ver la información del volumen de datos utilizamos el comando<br>
+			<p>Para ver la información del volumen de datos utilizamos el comando<br></p>
 			<ul>
 				<li>
 					docker volume inspect
 				</li>
 			</ul>
-			Para listar los volumen de datos que tenemos creados utilizamos el comando<br>
+			<p>Para listar los volumen de datos que tenemos creados utilizamos el comando<br></p>
 			<ul>
 				<li>
 					docker volume ls
@@ -74,18 +73,17 @@ realizar diversas funciones con el contenedor como subir, bajar o migrar contene
 			</ul>
 
 
-		Para borrar los volumenes de datos utilizamos el comando<br>
+		<p>Para borrar los volumenes de datos utilizamos el comando<br></p>
 			<ul>
 				<li>
 					docker volume rm
 				</li>
 			</ul>
-		</p>
 	</section>
 	<section>
 		<h3>Gestion de Contenedores de volumenes de datos</h3>
 		<p>
-			Para crear un contenedor con un volumen de datos asociado con docker utilizamos el comando
+			Para crear un contenedor con un volumen de datos asociado con docker utilizamos el comando</p>
 			<ul>
 				<li>
 					docker create -it --name data_vol_container -v /shared_folder ubuntu:14.04 bash
@@ -97,7 +95,7 @@ realizar diversas funciones con el contenedor como subir, bajar o migrar contene
 				</li>
 			</ul>
 
-		Para crear un contenedor asociado al contenedor anterior y que montará el volumen de datos utilizamos el comando<br>
+		<p>Para crear un contenedor asociado al contenedor anterior y que montará el volumen de datos utilizamos el comando<br></p>
 			<ul>
 				<li>
 					docker run -it --name container1 --volumes-from data_vol_container ubuntu:14.04 bash
@@ -106,11 +104,10 @@ realizar diversas funciones con el contenedor como subir, bajar o migrar contene
 					</ul>
 				</li>
 			</ul>
-		</p>
 	</section>
-	</body>
 	<footer>
 		<p>Todos los derechos reservados</p>
-		<p>Copyrigth &copy 2019</p>
-	</footer
+		<p>Copyrigth &copy; 2019</p>
+	</footer>
+	</body>
 </html> 
