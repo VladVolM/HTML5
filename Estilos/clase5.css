@@ -1,0 +1,48 @@
+
+header {
+        
+    display:block;
+    background:blue;
+    padding:10px 0px;
+	border-radius:15px;
+	text-align:center;
+}
+
+footer {
+        
+    display:block;
+    background:blue;
+    padding:10px 0px;
+	border-radius:15px;
+	text-align:center;
+	color:white;
+}
+h1{
+	color: white;
+	font-family:TimesNewRoman;
+	font-size: 30px;
+}
+h3{
+	color: white;
+	font-family:TimesNewRoman;
+	font-size: 20px;
+	text-align:center;
+	background:blue;
+    padding:10px 0px;
+	border-radius:15px;
+}
+p{
+	font-family:Arial;
+	font-size: 15px;
+}
+li{
+	font-family:Arial;
+	font-size: 15px;
+}img{
+	width:300; 
+	height:200;
+}
+link{
+	width:32;
+	height:32;
+}
