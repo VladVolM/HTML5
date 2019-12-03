@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="UTF-8"> 
 		<title>Men&uacute; Principal</title>
+		<script src="Geolocalizacion.js">getLocation();</script>
+		<style>a:link{color:00c7ff} a:visited{color:00495e} a:hover{color:red} body{background-color:cccccc;}</style>
 		<style>
 			ul{
 				list-style-type: none;
@@ -30,7 +32,6 @@
 
 			body{background-color:#cccccc;}
 		</style>
-
 	</head>
 	<body>
 		<nav>
@@ -45,5 +46,7 @@
 				<li><a href="Tabla.html" target="1">Bibliograf&iacute;a</a></li>
 			</ul>
 		</nav>
+		<p id="geo"></p>
+		<button onclick="getLocation()">geo</button>
 	</body>
 </html>
