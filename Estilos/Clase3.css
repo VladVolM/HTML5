@@ -1,0 +1,16 @@
+#apartado2{text-align: center;}
+#bloque{font-size:15px; width: 270px; height: 80px; margin-left: 300px; padding: 2px; border-radius: 5px; font-family:Arial, Times New Roman}
+a:link{color:00c7ff}
+a:visited{color:00495e}
+a:hover{color:red}
+a:active{color:ffd632}
+body{color:white; background-color:rgb(100, 100, 100); margin-left: 20px}
+footer {text-align: right;}
+h3{font-size:30px; font-family:Arial, Times New Roman}
+h4{font-size:25px; font-family:Arial, Times New Roman; text-decoration: underline}
+header {text-align:center;}
+img{}
+link{}
+li{font-family:Arial, Times New Roman; width: 800px; background-color: rgb(180, 180, 180); color: black; margin: 2px; padding-left: 5px; padding-right: 10px; padding-bottom: 1px; border-radius: 5px}
+p{font-size:18px; margin-left: 10px; font-family:Arial, Times New Roman}
+ul{list-style-type: none;}
