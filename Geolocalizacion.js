@@ -1,17 +1,15 @@
-var x = document.getElementById("geo");
-function getLocation() {
+var x;
 
-	window.alert(x);
+function getLocation() {
+	x=document.getElementById("geo");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition, showError);
-	window.alert(2);
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 function showPosition(position) {
-	window.alert(3);
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
 }
