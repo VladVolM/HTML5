@@ -1,0 +1,65 @@
+
+body{
+    background-color: rgb(228, 228, 228);
+    font-family: 'Times New Roman', Times, serif;
+    color:black;
+}
+p{
+    margin-right: 10%;
+    text-align: left;
+    font-size: 1.1em;
+}
+h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    text-alig
+}
+h3{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+span{
+    font-weight:bold;
+}
+img{
+    width:500px;
+    height:250px;
+}
+.menu{
+    font-family:'Courier New', Courier, monospace;
+    color:rgb(61, 61, 61);
+    font-weight: bold;
+    font-size: 1em;
+}
+fieldset{
+    width: 25%;
+}
+legend{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+    font-size: 1.3em;
+}
+ul{
+    margin:0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    
+}
+li{
+    color:blue;
+    list-style: none;
+    margin-right: 0px;
+    padding-right: 0px;
+}
+li:hover a:first-child:hover{
+    color:green;
+}
+
+a:visited{
+    color:rebeccapurple;
+}
+li a{
+    color:blue;
+    text-decoration: none;
+}

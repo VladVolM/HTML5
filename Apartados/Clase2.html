@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+<title>Imagenes y contenedores</title>
+<meta name="Docker" content="imagenes,contenedores" />
+<meta name="autor" content="FcoJose, Volodimir, Adrian" />   
+<meta http-equiv="Content-type" content="text/html charset=utf-8"/>
+<link href="../Estilos/parte2.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <header>
+       <h1>Imagenes y contenedores.</h1>
+    </header> 
+    <nav class="menu" id="arriba">
+        <fieldset><legend>Enlaces rapidos</legend>
+        <ul>
+            <li><a href="#Inicio">Inicio</a> </li>
+            <li><a href="#Imagenes">Imágenes</a></li>
+            <li><a href="#Contenedores">Contenedores</a></li>
+            <li><a href="#Gestion imagenes">Gestion de las imagenes</a></li>
+            <li><a href="#Gestion contenedores">Gestion de los contenedores</a></li>
+        </ul>
+    </fieldset>
+    </nav>
+    <section id="Inicio">
+        <article>
+            <h3>Inicio</h3>
+            <p>
+                Docker Engine, que es la aplicación cliente servidor de docker y se contituye de 3 componentes.
+                El demonio de docker, que es el demonio que se ejecuta en segundo plano en en nuestra maquina fisica y es el quien esta a la escucha para poder ejecutar esos contenedores o maquinas virtuales  dentro de nuestro ordenador.
+                Red API. Nos permite comunicarnos con el demonio de Docker, es fundamental para hacer desarrollo de otros software y comunicar ese software con el demonio de docker para la gestion de esa maquina virtual.
+                La interfaz de linea de comando (CLI)con la que nosotros utilizamos el servicio que es el comando docker. Lo que realmente el comando docjker hacer no es una interactuacion directa con el demonio de docker como tal, sino que utiliza la red api que hay en medio para comunicarse con el demonio de docker.
+                Cuando ejecutamos cualquier comando docker lo que estamos realmente haciendo es una llamada al API que se comunica con el demonio de docker y realiza la accion que sea conveniente.   
+            </p>
+            <img src="../Imagenes/Imagen1.png"/>
+            <p>
+                Otro elemento que tenemos que tener en consideracion es el Docker registry.
+                Se creo con la intencion de almacenar un servicio que nos permita almacenar imagenes
+                Esta forma de almacenamiento de imagenes es como un servidor que nosotros tenemos en otro sitio diferente no en nuetra maquina virtual y lo que hace basicamente es almacenar imagenes que ahora explicaremos lo que son, con el objetivo de poder tener un almacen de software concreto y tambien poder irlo evolucionando mediante un versionado.
+                Los registros de docker pueden serpublicos o privados, es decir que existen registros publicos en internet o  pudiendo montarlo en tu ambito local registros de tipo privados como tus imagenes, versionalas y tener una evoluicion de tu docker.  Suele estar orientado a las empresas que desarrollan sus propios servicios, si usan la tecnologia de docker normalmente se suele tener un registro privado donde se sube todo y si esa empresa aporta a la comunidad, tendra una parte publica y en esa parte publica suben algunas imagenes.
+            </p>
+            <img src="../Imagenes/Imagen2.png" />
+            <p>
+                El registro oficial de docker vamos a verlo ahora que es un docker hub, un docker hub es la direccion donde docker a montado un registro, que es el registro mas importante de todo internet y vamos a verlo porque es importante tener una cuenta a mano.
+                La pagina es <a href="https://hub.docker.com">https://hub.docker.com</a>
+                Necesitariamos un ID de docker, el identificador de usuario, una direccion de email y una contraseña. Y validar la cuenta en tu correo a continuacion.
+            </p>
+            <img src="../Imagenes/Imagen3.png" />
+            <p>
+                    Una vez accedemos tendriamos en el dashboard, nuestro nombre de usuario, los repositiorios que nostros tenemos creados, el concepto de repositorio seria donde vamos a alojar una imagen, esos repositorios puyeden ser publicos o privados, la cuenta publica te permite un repositorio privado.
+                    Para la explicacion, creariamos un repositorio publico y le introduciriamos una imagen.
+                    Podriamos trabajar nustras imagenes en local y cuando tengamos la imagen realizada y lista para funcionar la vamos subiendo.
+                    A continuacion vamos a pasar a la explicacion del concepto de imagenes y contenedores.
+                    Es una plantilla de solo lectura y que se compone de un sistema de ficheros y unos parametros listos para poder ejecutarlos, esta basado en sistema operativo linux.
+                    Nosotros en docker hub tenemos multitud de imagenes / plantillas para poder ejecutar: imagenes de debian, imagenes de ubuntu, de todos los tipos de distribuciones de linux y ademas de eso tenemos otro tipo de imagenes que ya estan preparadas para poder ejecutar servicios, tenemos imagenes de mysql, de apache, de git, es decir, de todos los softwares mas importantes que se conocen hasta la fecha.
+            </p>
+            <img src="../Imagenes/Imagen4.png" />
+            
+        </article>
+    </section>
+    <section id="Imagenes">
+        <article>
+            <h3>
+                Imágenes.
+            </h3>
+            <div>
+                <p>
+                    Estas imágenes lo que representan son como un sistema operativo, que tiene una configuración 
+                    y esta lista para ser ejecutada, realmente la plantilla como tal no se ejecuta, la plantilla 
+                    se implemente y lo que almacena es la información del sistema operativo mas la configuración 
+                    que nosotros le hayamos echo, y se quedara guardado. A partir de esa imagen es de lo que 
+                    nosotros vamos a instanciar maquinas virtuales, la imagen es como un preparado que tenemos 
+                    listo para poder ejecutarlo.
+                </p>
+            </div>
+        </article>
+    </section>
+    <section id="Contenedores">
+        <article>
+            <h3>
+                Contenedores.
+            </h3>
+            <p>
+                El contenedor normal es una instancia de la imagen que hemos hablado antes, a nivel de sistema de 
+                ficheros el contenedor normal es un directorio que esta dentro del sistema de fichero, concretamente 
+                en el directorio var lib docker hay una serie de subdirectorios y dentro de esos subdirectorios 
+                meteriamos lo que seria ese contenedor.
+                El sistema es similar como los yell run de linux. Es decir, aislan ese segmento de sistema 
+                operativo, se aisla, para esa capa de virtualizacion, entonces,  desde el host fisico podria 
+                llegar a ese sistema de fichero, pero la persona que aceda a ese sistema de fichero le va a ser 
+                imposible hacia el salir hacia el host fisicio, digamos que esta aislado.
+                Los contenedores actuan como maquinas virtuales, las maquinas virtuales se pueden ejecutar, 
+                reiniciar, parar, gestionar de distintas formas, por lo tanto, el contenedor es una maquina 
+                virtual que podemos utilizar y que seria la parte funcional de una imagen.
+            </p>
+            </article>
+        </section>
+        <section id="Gestion imagenes">
+            <article>
+                <h3>Gestionar las imagenes de los contenedores.</h3>
+                <p>En docker para gestionar las imagenes tenemos los siguientes comandos comandos:</br>
+                    <span>$docker images</span>   nos muestra las imagenes que tenemos instaladas actualemtne en nuestro sistema fisico. </br>
+                    <span>$docker history</span>  Nos muestra el historial de cambios que tiene esa imagen. Es un historial de las ejecuciones de la imagen hasta llegar al estado en el que esta. Por ejemplo, cogemos una imagen base de devian y le instalamos un servidor apache, los pasos de devian base hasta el apache instalado, son pequeños pasos que se van dando, docker history mostraria esos pasos.</br>
+                    <span>$docker inspect</span>  Nos mostraría una descripcion detallada de las caracteristicas de la imagen.</br>
+                    <span>$docker save/load</span>  Lo que haria salvar y cargar una imagen a partir a partir de un tar.</br>
+                    <span>$docker rmi</span>  Lo que haria seria borrar una imagen de nuestro sistema fisico, de nuestro host fisico.</br>
+                </p>
+            </article>
+        </section>
+        <section id="Gestion contenedores">
+            <article>
+                <h3>Gestion de los contenedores</h3>
+                <p>
+                    Para gestionar los contenedores hay una gran cantidad de comandos, vamos a ver los mas utiles.</br>
+                    <span>$docker attach</span> nos agregamos a ese contenedor</br>
+                    <span>$docker exec</span> ejecutamos un comando en ese contenedorescon </br>
+                    <span>$docker inspect</span> inspeccionamos de forma detallada las caracterisrtticas de ese contenedores</br>
+                    <span>$docker kill</span> matamos ese contenedor</br>
+                    <span>$docker logs</span> vemos los logs de un contenedor en concreto</br>
+                    <span>$docker pause/unpause</span> pausamos el contenedor, digamos que pausamos la mauqina virtuales</br>
+                    <span>$docker port</span>  analizams o establecemos un ppuerto de posicion para poder entrar a ese puerto 
+                    en el container</br>
+                    <span>$docker ps</span> podemos ver los contenedores que tenemos en esa maquina corriendo en ese 
+                    momento, esto no veria los contenedores que estan parados, si queremos ver los pasaros seria con </br>
+                    <span>$docker ps -as</span>.</br>
+                    <span>$docker rename</span>  podemos renombrar un contenedor.</br>
+                    <span>$docker start/stoip/restart</span>  gestiones tipicas de mauqinas virtuales, arrancar, parar reiniciar.</br>
+                    <span>$docker rm</span>  borraria un contenedor, para poder borrarlo tiene que estar parado</br>
+                    <span>$docker run</span> puede ser el mas importante de docker, este comando ejecuta ejecuta o instancia 
+                    un container a partir de iuna imagen, dentro de docker run vamos a tener multitud de opciones 
+                    que vamos a poder utilizar,  este comando es con el que vamos a trabajar mas. </br>
+                    <span>$docker stats</span> vamos a ver los status de un container</br>
+                    <span>$docker top</span> vamos a ver como una gestion una monitorizacion de los container que estamos ejecutando, 
+                    los recursos que se estan consumiendo etc.</br>
+                    <span>$docker update</span> es la actualizacion de un container concreto en base de una imagen, es decir 
+                    cuando instanciamos un container con docker run, como las imagenes van versionadas, 
+                    cuando hacemos un docker run siempre instanciamos la imagen ultima que se llama latest, 
+                    siempre se suele emplear asi,  por ejemplo: docker run debian (y por defecto siempre va 
+                    coger la ultima latest), si la imagen se a actualizado, cuando queremos actualizar el 
+                    container tenemos que realizar el docker update para poder actualizar el container a la 
+                    ultima version.
+                </p>
+                <img src="../Imagenes/Imagen5.png" />
+                <img src="../Imagenes/Imagen6.png" />
+            </article>
+        </section>
+        <footer>
+            <p>
+                <a href="#arriba">Volver Arriba</a>
+            </p>
+        </footer>
+</body>
+
