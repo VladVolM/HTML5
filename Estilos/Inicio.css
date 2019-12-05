@@ -1,0 +1,32 @@
+.titulo {
+	width:99.6%;
+	height:20%;
+	border-bottom:none;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+}
+.menu {
+	float:left;
+	width:20%;
+	height:80%;
+	border-top:none;
+	border-right:none;
+}
+.mainContent {
+	float:left;
+	width:79.6%;
+	height:80%;
+	background-color:#bccccc;
+	border-top:none;
+	border-left:none;
+}
+footer {
+        
+    display:block;
+    background-color:#cccccc;
+    padding:10px 0px;
+	text-align:center;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	color:white;
+}
