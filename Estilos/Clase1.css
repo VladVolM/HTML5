@@ -2,6 +2,14 @@ a:link{color:00c7ff}
 a:visited{color:00495e}
 a:hover{color:red}
 a:active{color:ffd632}
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
 h3{font-size:30px;font-family:Arial, Times New Roman }
 body{color:white; background-color:black;margin-left: 20px}
 section{font-size:22px;margin-left: 10px}
