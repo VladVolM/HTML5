@@ -1,36 +1,210 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../Estilos/Clase1.css">
+		<title>Instalación de Docker</title>
+	</head>
+	<body>
+		<header>
+			<h3>Networking en Docker</h3>
+			Al instalar se crean 3 tipos de redes<br>
+			-Red bridge que usa por defecto<br>
+			-Red de host (para enlazar containers)<br>
+			-Red None (para aislar un contenedor simple)<br>
+			<ul>
+				<li>
+					$ docker network ls
+				</li>
+			</ul>
+			<ul>
+				<li>
+					NETWORK ID	NAME	DRIVER	SCOPE<br>
+					9d688c53db45	Bridge	bridge	local<br>
+					...........<br>
+				</li>
+			</ul>
+		</header>
+		<section>
+			<h3>Bridge</h3>
+			El Bridge es una red especial que representa la interfaz de docker0<br>
+Se podra observar la direccion de IP de este, con otros de sus datos con:<br>
+			<ul>
+				<li>
+					$ ifconfig
+				</li>
+			</ul>
+			Todo nuevo contenedor se conecta a esta IP
+		</section>
+		<section>
+			<h3>Gestion de red</h3>
+			Conectar o desconectar containers a redes
+			<ul>
+				<li>
+					$ docker network connect/disconnect (nombre o ID)
+				</li>
+			</ul>
+			Crear redes nuevas de tipo bridge o overlay
+			<ul>
+				<li>
+					$ docker network create (nombre o ID)
+				</li>
+			</ul>
+			Listar todas las networks
+			<ul>
+				<li>
+					$ docker network ls (nombre o ID)
+				</li>
+			</ul>
+			Inspeccionar una network, dando todos sus datos internos
+			<ul>
+				<li>
+					$ docker network inspect (nombre o ID)
+				</li>
+			</ul>
+			Remover una network
+			<ul>
+				<li>
+					$ docker network rm (nombre o ID)
+				</li>
+			</ul>
+		</section>
+		<section>
+			<h3>Para que crear Redes Bridge</h3>
 
-<head>
 
-<link rel="stylesheet" href="../Estilos/estilos1.css"></link>
+			-Permiten aislar segmentos de redes.<br>
+			-Tiene sus contenedores propios.<br>
+			-Los contenedores solo se comunican dentro de esa red.<br>
+			-Los contenedores que pertenecen a varias redes, se comunican con todas.<br>
+			-El contenedor compartido solo pude envira un autput a una red externa.<br>
+		</section>
+		<section>
+			<h3>Funcion de Bridge - link</h3>
 
-</head>
+			Permite conectar contenedores(no es igual que el bridge por defecto).<br>
+			-Sin la nesesidad de exponer puertos(es automatico).<br>
+			-Sige protocolos de seguridad, al hacer esta conexion.<br>
+			-Usa los nombres de los contenedores.<br>
+			-Usa variables de entorno para almacenar datos de puertos.<br>
+		</section>
+		<section>
+			<h3>Practica</h3>
 
-<body text="white" bgcolor="black">
+			Crear container en segundo plano, ports expustos y nombre web, utilizando las imagenes de la clase anterior
+			<ul>
+				<li>
+					$ docker run -d -P --name web training/webapp python app.py
+				</li>
+			</ul>
+			Puedes verlo con:
+			<ul>
+				<li>
+					$ docker ps
+				</li>
+				<li>
+					$ docker inspect web
+				</li>
+			</ul>
+			El gateway esta dirigido al Bridge inicial<br>
+			Terminar el contenedor.
+			<ul>
+				<li>
+					$ docker stop web
+				</li>
+				<li>
+					$ docker rm web
+				</li>
+			</ul>
 
-<a href="Art1.html" target="1">Siguiente</a>
+			<ul>
+				<li>
+					$ docker ls
+				</li>
+				<li>
+					$ docker network inspect (ID de contenedor bridge principal)
+				</li>
+			</ul>
+			Podremos ver todos los contenedores conectados al bridge principal<br>
+
+			Crear un bridge nuevo con nombre "redlocal"
+			<ul>
+				<li>
+					$ docker network create -d bridge redlocal
+				</li>
+			</ul>
+			Podemos verlo con: 
+			<ul>
+				<li>
+					$ docker network ls
+				</li>
+				<li>
+					$ docker network inspect redlocal
+				</li>
+			</ul>
+			Como puedes ver este tiene una direccion y interfaz nueva.
+			<ul>
+				<li>
+					$ ifconfi
+				</li>
+			</ul>
+			Se observa que hay ese nuevo bridge(se puede ver por la IP)<br><br>
+
+			Se empieza la segunda parte de la practica<br>
+			Crear contenedor relacionado a la nueva red (con imagen apache)
+			<ul>
+				<li>
+					$ docker run -d -P --network=redlocal --name web1 eboraas/apache-php
+				</li>
+			</ul>
+			Se puede ver la dirrecion de la nueva red con:
+			<ul>
+				<li>
+					$ docker ps
+				</li>
+				<li>
+					$ docker inspect (ID)
+				</li>
+			</ul>
 
 
-<h3>Networking en Docker</h3>
-
-<p>contenido linea 1<br>
-contenido linea 2<br>
-contenido linea 3<br>
-contenido linea 4</p>
-
-
-<h3>apartado 2</h3>
-
-<p>contenido linea 1<br>
-contenido linea 2</p>
-
-
-<h3>Apartado 3</h3>
-
-<p>contenido linea 1<br>
-contenido linea 2</p>
-
-
-</body>
-
+			Crear una segunda web
+			<ul>
+				<li>
+					$ docker run -d -P --network=redlocal --name web2 eboraas/apache-php
+				</li>
+			</ul>
+			<ul>
+				<li>
+					$ docker ps
+				</li>
+				<li>
+					$ docker inspect (ID web2)
+				</li>
+			</ul>
+			Se observa que tienen las dos el mismo gateway.<br>
+			Pata asociar una TTI
+			<ul>
+				<li>
+					$ docker exec -ti web1 /bin/bash 
+				</li>
+			</ul>
+			Con esto se permitira que haya una conexion entre los containers:
+			<ul>
+				<li>
+					$ docker network connect redlocal web2
+				</li>
+			</ul>
+			Se puede comprobar si el ping se mueve entre ellos:
+			<ul>
+				<li>
+					$ ping (IPAddress de web2)
+				</li>
+			</ul>
+		</section>
+		<footer>
+			<a href="Clase3.html" target="1">Siguiente</a>
+		</footer>
+	</body>
 </html>
+
