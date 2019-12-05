@@ -3,11 +3,18 @@ label.datos{
 	width: 120px;
 }
 #texto{
-	
+	display: inline-block;
+	width: 120px;
+	float:left;
 }
 #mensaje
 {
 	display: inline-block;
-	width: 260px;
+	width: 270px;
 	height: 200px;
+	float:left;
+}
+fieldset
+{
+	border-style: double;
 }
