@@ -11,6 +11,7 @@
 	height:80%;
 	border-top:none;
 	border-right:none;
+	border-bottom:none;
 }
 .mainContent {
 	float:left;
@@ -19,9 +20,15 @@
 	background-color:#bccccc;
 	border-top:none;
 	border-left:none;
+	border-bottom:none;
 }
 footer {
-        
+	border-style: solid;
+	border-right-width: 2px;
+	border-left-width: 2px;
+	border-bottom-width: 2px;
+	border-color:#413f3f;
+	border-right-color: #7c7878;
     display:block;
     background-color:#cccccc;
     padding:10px 0px;
