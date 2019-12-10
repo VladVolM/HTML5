@@ -21,17 +21,17 @@
 		<p id="geo"></p>
 		<button onclick="getLocation()">geo</button><br>
 
-		<dev id="add" width="160" height="120">
-			<video width="160" height="120" controls style="position: absolute;">
+		<dev id="add">
+			<video>
 				<source src="movie.mp4" type="video/mp4">
 				<source src="movie.ogg" type="video/ogg">
 				Your browser does not support the video tag.
 			</video> 
-			<svg width="20" height="20" style="position: absolute;" >
+			<svg width="20" height="20">
   				<circle cx="10" cy="10" r="4" stroke="green" stroke-width="4" fill="yellow" />
 
 			</svg>
-			<button onclick="document.getElementById(&#34;add&#34;).innerHTML =&#34; &#34;" style="position: absolute;width: 0.5%;border-left-style: solid;padding-right: 12px;left: 10px;padding-left: 0px;">X</button>
+			<button class="boton" onclick="document.getElementById(&#34;add&#34;).innerHTML =&#34; &#34;">X</button>
 		</dev>
 
 	</body>

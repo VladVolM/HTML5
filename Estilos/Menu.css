@@ -35,6 +35,28 @@ ul li a:hover {
 	color: #fff;
 }
 
+video{
+	position: absolute;
+}
+svg {
+	position: absolute;
+}
+.boton{
+	position: absolute;
+	width: 0.5%;
+	border-left-style: solid;
+	padding-right: 12px;
+	left: 10px;
+	padding-left: 0px;
+}
+.add{
+	width:160; 
+	height:120;
+}
+video {
+	width:160; 
+	height:120;
+}
 body{
 	background-color:#cccccc;
 }
