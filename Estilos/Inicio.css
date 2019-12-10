@@ -8,7 +8,7 @@
 .menu {
 	float:left;
 	width:20%;
-	height:80%;
+	height:auto;
 	border-top:none;
 	border-right:none;
 	border-bottom:none;
@@ -16,7 +16,7 @@
 .mainContent {
 	float:left;
 	width:79.6%;
-	height:80%;
+	height:auto;
 	background-color:#bccccc;
 	border-top:none;
 	border-left:none;
