@@ -3,7 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="Estilos/Menu.css">
-		<script src="Geolocalizacion.js">getLocation();</script>
+		<title>Docker para principiantes</title>
+		<script src="Geolocalizacion.js"></script>
 	</head>
 	<body>
 		<nav>
@@ -15,24 +16,20 @@
 				<li><a href="Apartados/Clase3.html" target="1">Construir y subir im&aacute;genes al registro</a></li>
 				<li><a href="Apartados/Clase4.html" target="1">Networking en Docker</a></li>
 				<li><a href="Apartados/Clase5.html" target="1">Almacenamiento Docker</a></li>
+				<li><a href="Apartados/Videos.html" target="1">Videos</a></li>
 				<li><a href="Apartados/Formulario.html" target="1">Contacto</a></li>
 			</ul>
 		</nav>
 		<p id="geo"></p>
-		<button onclick="getLocation()">geo</button><br>
+		<button onclick="getLocation()">geo</button><br/><br/>
 
-		<dev id="add">
-			<video controls>
-				<source src="movie.mp4" type="video/mp4">
-				<source src="movie.ogg" type="video/ogg">
-				Your browser does not support the video tag.
-			</video> 
+		<div id="add">
 			<svg width="20" height="20">
   				<circle cx="10" cy="10" r="4" stroke="green" stroke-width="4" fill="yellow" />
-
 			</svg>
 			<button class="boton" onclick="document.getElementById(&#34;add&#34;).innerHTML =&#34; &#34;">X</button>
-		</dev>
+			<iframe class="frame"  src="https://www.youtube.com/embed/CD7wPcCBo8o"></iframe>
+		</div>
 
 	</body>
 </html>
