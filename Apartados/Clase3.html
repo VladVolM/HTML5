@@ -14,118 +14,151 @@
     </header>
     <section>
         <h4>Construcción de imagenes propias</h4>
-        <p>
-            Para la construcción de una imagen propia en Docker es necesario llevar a cabo una serie de pasos, 
-            estos difieren según el método que se emplee para ello, ya sea mediante comandos en la consola, o a través
-            de un archivo Dockerfile.   
-        </p>
-        <h4>Construcción mediante consola</h4>
-        <p>
-            Primero es necesario arrancar el contenedor con la imagen de la cual queremos partir para crear la nueva,
-            para ello se utiliza el comando "docker images", que permite visualizar las imagenes ya creadas, y el comando 
-            "run" para arrancar dicha imagen de forma interactiva y mediante una terminal. 
 
-            <b>
-                <ul>
+        <div class="articulo1">
+            <p>
+                Para la construcción de una imagen propia en Docker es necesario llevar a cabo una serie de pasos, 
+                estos difieren según el método que se emplee para ello, ya sea mediante comandos en la consola, o a través
+                de un archivo Dockerfile.   
+            </p>
+        </div>
+
+        <h4>Construcción mediante consola</h4>
+
+        <div class="articulo2">
+            <p>
+                Primero es necesario arrancar el contenedor con la imagen de la cual queremos partir para crear la nueva,
+                para ello se utiliza el comando "docker images", que permite visualizar las imagenes ya creadas, y el comando 
+                "run" para arrancar dicha imagen de forma interactiva y mediante una terminal. 
+            </p>
+
+            <ul class="lista">
+                <b>
                     <li>$ sudo docker images</li>
                     <li>$ sudo docker run -t -i [nombre_imagen] /bin/bash</li>
-                </ul>
-            </b>
-        </p>
-        <p>
-            Una vez arrancada la imagen se llevará a cabo la ejecución de los diferentes comandos que añadirán nuevas funcionalidades
-            a la nueva imagen. Se debe tener especial cuidado en esta parte del proceso, dado que cada comando ejecutado se escribirá
-            como una capa nueva de la imagen. Al finalizar, se usará el comando "exit", dicho comando cerrará la terminal de la imagen,
-            lo que no finalizará la ejecución del contenedor, esto se puede comprobar mediante el comando "docker ps".
-
-            <b>
-                <ul>
-                    <li>$ sudo exit</li>
-                    <li>$ sudo docker ps</li>
-                </ul>
-            </b>
-        </p>
-        <p>
-            Finalmente se debe realizar un "commit" para guardar todos los cambios realizados en la nueva imagen y crearla. En este punto
-            existen variedad de opciones como poner un mensaje descriptivo, el autor, el TAG con la versión de la misma, etc.
-
-            <b>
-                <ul>
-                    <li>$ sudo docker commit -m "[mensaje_del_commit_realizado]" -a "[nombre_autor]" [container_Id] [repositorio[:TAG]]</li>
-                </ul>
-            </b>
-        </p>
-        <h4>Construcción mediante Dockerfile</h4>
-        <p>
-            En este caso se requiere primero crear un directorio y un fichero llamado Dockerfile en el. Este fichero contendrá
-            la estructura básica para la creación de la nueva imagen. Existen diferentes formatos para su creación.
-            Sin embargo, en este caso se verá una estructura básica para iniciados en Docker.
-
-            <b>
-                <ul>
-                    <li>$ sudo mkdir [nombre_carpeta]</li>
-                    <li>$ sudo cd [nombre_carpeta]</li>
-                    <li>$ sudo vim Dockerfile</li>
-                </ul>
-            </b>
-            
-            <p id="bloque">
-                <b>
-                    # Comentario sobre la imagen a crear
-                    <br>FROM [nombre_imagen[:TAG]]</br>
-                    MAINTAINER [nombre_autor]
-                    <br>RUN [comandos a ejecutar]</br>
-                </b>
-            </p>
-    
-            <ul>
-                <li>
-                    El simbolo # se utiliza para escribir comentarios, estos no son ejecutados y sirven únicamente para dar
-                    una idea más detallada de lo que se está realizando. 
-                    Se recomienda al inicio indicar cual será la imagen que se creará, entre otras cosas.
-                </li>
-                <li>
-                    La sentencia FROM que representa la imagen que vamos a tener de referencia para construir la nueva.
-                </li>
-                <li>
-                    MAINTAINER es el campo referente al autor del fichero Dockerfile.
-                </li>
-                <li>
-                    RUN ejecuta los comandos para darle la nueva funcionalidad (estos no deben ser ejecutados de forma interactiva).
-                </li>
+                </b>     
             </ul>
+        </div>
 
+        <div class="imagen2"><img src="../Imagenes/dockerImages.jpg"/></div>
+
+        <div class="articulo3">
             <p>
-                Una vez se ha creado el fichero correctamente se ejecuta el comando "docker buid" que crea la nueva imagen partiendo
-                del fichero creado.
-            </p>
+                Una vez arrancada la imagen se llevará a cabo la ejecución de los diferentes comandos que añadirán nuevas funcionalidades
+                a la nueva imagen. Se debe tener especial cuidado en esta parte del proceso, dado que cada comando ejecutado se escribirá
+                como una capa nueva de la imagen. Al finalizar, se usará el comando "exit", dicho comando cerrará la terminal de la imagen,
+                lo que no finalizará la ejecución del contenedor, esto se puede comprobar mediante el comando "docker ps".
 
-            <b>
-                <ul>
-                    <li>$ sudo docker build -t [repositorio[:TAG]] .</li>
+                <ul class="lista">
+                    <b>
+                        <li>$ sudo exit</li>
+                        <li>$ sudo docker ps</li>
+                    </b>     
                 </ul>
-            </b>
-        </p>
+            </p>    
+        </div>
+
+        <div class="articulo4">
+            <p>
+                Finalmente se debe realizar un "commit" para guardar todos los cambios realizados en la nueva imagen y crearla. En este punto
+                existen variedad de opciones como poner un mensaje descriptivo, el autor, el TAG con la versión de la misma, etc.
+
+                <ul class="lista">
+                    <b><li>$ sudo docker commit -m "[mensaje_del_commit_realizado]" -a "[nombre_autor]" [container_Id] [repositorio[:TAG]]</li></b>    
+                </ul>
+            </p>
+        </div>
+
+        <div class="imagen4"><img src="../Imagenes/dockerCommit.png"/></div>
+
+        <div class="imagen5"><img src="../Imagenes/dockerArquitectura.png"/></div>
+        
+        <h4>Construcción mediante Dockerfile</h4>
+
+        <div class="articulo5">
+            <p>
+                En este caso se requiere primero crear un directorio y un fichero llamado Dockerfile en el. Este fichero contendrá
+                la estructura básica para la creación de la nueva imagen. Existen diferentes formatos para su creación.
+                Sin embargo, en este caso se verá una estructura básica para iniciados en Docker.
+
+                <ul class="lista">
+                    <b>
+                        <li>$ sudo mkdir [nombre_carpeta]</li>
+                        <li>$ sudo cd [nombre_carpeta]</li>
+                        <li>$ sudo vim Dockerfile</li>
+                    </b>        
+                </ul>
+                
+                <div class="cajaBloque">
+                    <p id="bloque">
+                        <b>
+                            # Comentario sobre la imagen a crear
+                            <br>FROM [nombre_imagen[:TAG]]</br>
+                            MAINTAINER [nombre_autor]
+                            <br>RUN [comandos a ejecutar]</br>
+                        </b>
+                    </p>
+                </div>
+                
+                <fieldset><legend><b>Resumen</b></legend>
+                    <ul>
+                        <li>
+                            El simbolo # se utiliza para escribir comentarios, estos no son ejecutados y sirven únicamente para dar
+                            una idea más detallada de lo que se está realizando. 
+                            Se recomienda al inicio indicar cual será la imagen que se creará, entre otras cosas.
+                        </li>
+                        <li>
+                            La sentencia FROM que representa la imagen que vamos a tener de referencia para construir la nueva.
+                        </li>
+                        <li>
+                            MAINTAINER es el campo referente al autor del fichero Dockerfile.
+                        </li>
+                        <li>
+                            RUN ejecuta los comandos para darle la nueva funcionalidad (estos no deben ser ejecutados de forma interactiva).
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <p>
+                    Una vez se ha creado el fichero correctamente se ejecuta el comando "docker buid" que crea la nueva imagen partiendo
+                    del fichero creado.
+                </p>
+
+                <ul class="lista">
+                    <b><li>$ sudo docker build -t [repositorio[:TAG]] .</li></b>   
+                </ul>
+            </p>
+        </div>
+        
     </section>
+
     <section>
         <h3 id="apartado2">Integración de imagenes con DockerHub</h3>
-        <p>
-            Para subir las nuevas imagenes a DockerHub es necesario primero tener creado un repositorio dentro de nuestra cuenta
-            y seguir los siguientes pasos:
 
-            <ol>
-                <li>Es necesario que la nueva imagen tenga un tag para las distintas versiones, normalmente "lastest".</li>
-                <li>Hacer login en DockerHub a través de la consola mediante el comando "docker login", el usuario y la contraseña.</li>
-                <li>
-                    La imagen se subirá mediante el comando "docker push", aunque también se puede subir mediante "docker pull"
-                    si se ha clonado del repositorio.
-                </li>
-            </ol>
-        </p>
+        <div class="articulo6">
+            <p>
+                Para subir las nuevas imagenes a DockerHub es necesario primero tener creado un repositorio dentro de nuestra cuenta
+                y seguir los siguientes pasos:
+
+                <fieldset><legend><b>Pasos a seguir</b></legend>
+                    <ol>
+                        <li>Es necesario que la nueva imagen tenga un tag para las distintas versiones, normalmente "lastest".</li>
+                        <li>Hacer login en DockerHub a través de la consola mediante el comando "docker login", el usuario y la contraseña.</li>
+                        <li>
+                            La imagen se subirá mediante el comando "docker push", aunque también se puede subir mediante "docker pull"
+                            si se ha clonado del repositorio.
+                        </li>
+                    </ol>
+                </fieldset>    
+            </p>
+        </div>
+
+        <div class="imagen6"><img src="../Imagenes/dockerhub.png"/></div>
+        
     </section>
     <footer>
-            <button onclick= "location.href='Clase2.html'">Anterior</button>
-			<button onclick= "location.href='Clase.html'">Siguiente</button>
+        <div id="botIzq"><button onclick= "location.href='Clase2.html'">Anterior</button></div>
+        <div id="botDerch"><button onclick= "location.href='Clase4.html'">Siguiente</button></div>         		
     </footer>
 </body>
 </html>
