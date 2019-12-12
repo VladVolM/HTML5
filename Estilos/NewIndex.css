@@ -110,6 +110,8 @@ ul li a:hover {
 
 svg {
 	position: absolute;
+	margin-left: 8px;
+	margin-top: 2px;
 }
 .boton{
 	position: absolute;
@@ -117,6 +119,8 @@ svg {
 	border-left-style: solid;
 	left: 10px;
 	margin: 0.2%;
+	padding-left: 3px;
+	padding-right: 13px;
 }
 .add{
 	width:160px; 
